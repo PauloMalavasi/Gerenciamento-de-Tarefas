@@ -1,0 +1,55 @@
+package com.ph.tarefas.Entity;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "tb_tarefa")
+public class TarefaEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "descricaoTarefa")
+    private String descricao;
+    @Column(name = "vencimentoTarefa")
+    private LocalDate dataVencimento;
+    @Column(name = "tarefaConcluida")
+    private Boolean concluida;
+
+    public TarefaEntity() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public LocalDate getDataVencimento() {
+        return dataVencimento;
+    }
+
+    public void setDataVencimento(LocalDate dataVencimento) {
+        this.dataVencimento = dataVencimento;
+    }
+
+    public Boolean isConcluida() {
+        return concluida;
+    }
+
+    public void setConcluida(Boolean concluida) {
+        this.concluida = concluida;
+    }
+
+}
